@@ -160,3 +160,4 @@ cython_debug/
 /PyTorch深度学习实战/data/
 .idea/deployment.xml
 .idea/inspectionProfiles/Project_Default.xml
+/PyTorch深度学习实战/data-unversioned/

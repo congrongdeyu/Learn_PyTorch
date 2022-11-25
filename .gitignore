@@ -161,3 +161,4 @@ cython_debug/
 .idea/deployment.xml
 .idea/inspectionProfiles/Project_Default.xml
 /PyTorch深度学习实战/data-unversioned/
+/PyTorch深度学习快速入门教程/hymenoptera_data/

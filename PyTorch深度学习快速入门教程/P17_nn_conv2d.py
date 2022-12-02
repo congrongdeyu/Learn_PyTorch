@@ -2,6 +2,7 @@ import torch
 import torchvision
 from torch import nn
 from torch.utils.data import DataLoader
+from torch.utils.tensorboard import SummaryWriter
 
 dataset = torchvision.datasets.CIFAR10("./dataset", train=False, transform=torchvision.transforms.ToTensor(),
                                        download=True)
@@ -21,3 +22,14 @@ class Tudui(nn.Module):
 tudui = Tudui()
 print(tudui)
 
+writer = SummaryWriter("./logs")
+
+step = 0
+
+for data in dataloader:
+    imgs, targets = data
+    output = tudui(imgs)
+    writer.add_images("input", imgs, step)
+    output = torch.reshape(output, [-1, 3, 30, 30])
+    writer.add_images("output", output, step)
+    step += 1
